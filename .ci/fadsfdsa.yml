@@ -1,0 +1,5 @@
+version: "v2.0"
+name: "jdtest"
+steps:
+  - run:
+      echo "testt"
