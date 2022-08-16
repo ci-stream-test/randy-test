@@ -23,7 +23,7 @@ stages:
                 script: "cd ${WORKSPACE} \n make clean \n make"
                 languageRuleSetMap: # 规则集, 必选, 需要按照语言来进行填写
                     C_CPP_RULE:
-                        - "codecc_default_coverity_cpp"
+                        - "codecc_default_cpp"
                 customPath: # 黑名单。设置后不扫描黑名单中路径，例如.*/tirdParty/.*
                     - ".*/js/vue/.*"
  
