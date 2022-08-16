@@ -30,7 +30,7 @@ stages:
           targetImage: "mirrors.tencent.com/randy-test/test-container-registry"
           targetImageName: ""
           targetImageTag: "newfortest"
-          dockerBuildDir: "./test"
+          dockerBuildDir: "./src"
           dockerFilePath: "./src/Dockerfile"
           dockerBuildArgs: ""
           prootIgnorePath: |-
