@@ -4,12 +4,7 @@ name: "check_codecc"
 
 
 stages:
-  - name: "stage1"
-    jobs:
-      job_1:
-        steps:
-          - run: |
-              echo "预处理 or do something"
+
   - name: "stage2-自主配置规则集"
     jobs:
       job_2:
