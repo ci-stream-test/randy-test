@@ -2,6 +2,8 @@ version: v2.0
 
 steps:
   - checkout: self
+    with:
+      enableGitLfs: false
   - run: |
       echo "test3"
       sleep 3000
