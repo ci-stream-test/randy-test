@@ -12,8 +12,6 @@ stages:
       - name: "不允许直接使用.得先建一个二级目录出来"
         run: |-
           mkdir -p test
-      - name: "清理cache"
-        run: "rm -rf /root/.cache"
       - name: "Docker构建镜像和镜像复制转存"
         uses: "DockerBuildPushGo@1.*"
         with:
