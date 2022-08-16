@@ -1,0 +1,38 @@
+version: "v2.0"
+name: "测试构建并推送镜像"
+label: []
+stages:
+- name: "stage-3"
+  label:
+  - "Build"
+  jobs:
+    job_dE4:
+      name: "构建环境-LINUX"
+      steps:
+      - name: "不允许直接使用.得先建一个二级目录出来"
+        run: |-
+          mkdir -p test
+      - name: "清理cache"
+        run: "rm -rf /root/.cache"
+      - name: "Docker构建镜像和镜像复制转存"
+        uses: "DockerBuildPushGo@1.*"
+        with:
+          selectOp: "login_build_push"
+          sourceMirrorTicketPair: "[{\"id\":\"dockerLoginParam\",\"values\":[{\"id\"\
+            :\"RepoHost\",\"value\":\"\"},{\"id\":\"LDCredentialId\",\"value\":\"\"\
+            }]}]"
+          targetAuthType: "MY_INPUT"
+          targetRegUsername: "${{ settings.mirrors_token.username }}"
+          targetRegPassword: "${{ settings.mirrors_token.password }}"
+          targetImage: "mirrors.tencent.com/randy-test/test-container-registry"
+          targetImageName: ""
+          targetImageTag: "newfortest"
+          dockerBuildDir: "./test"
+          dockerFilePath: "./src/Dockerfile"
+          dockerBuildArgs: ""
+          prootIgnorePath: |-
+            /etc/hosts
+            /etc/resolv.conf
+            /etc/nsswitch.conf
+          targetRepoItemStr: []
+          sourceRepoItemsStr: []
