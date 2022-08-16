@@ -6,6 +6,6 @@ steps:
       enableGitLfs: false
   - run: |
       echo "test3"
-      sleep 3000
+      
       echo "end"
   
