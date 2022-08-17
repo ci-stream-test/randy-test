@@ -18,7 +18,7 @@ stages:
           ls ./src/
           cat ./src/Dockerfile
       - name: "Docker构建镜像和镜像复制转存"
-        uses: "DockerBuildPushGo@1.*"
+        uses: "DockerBuildPushGo@1.0.0"
         with:
           selectOp: "login_build_push"
           sourceMirrorTicketPair: "[{\"id\":\"dockerLoginParam\",\"values\":[{\"id\"\
