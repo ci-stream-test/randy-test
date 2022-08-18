@@ -9,10 +9,6 @@ stages:
     job_dE4:
       name: "构建环境-LINUX"
       steps:
-      - uses: pluginDemoJava@1.*
-        name: pluginDemoJava
-        with:
-          desc: test
       - checkout: self
         with:
           enableGitLfs: false
