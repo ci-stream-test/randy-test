@@ -33,7 +33,7 @@ stages:
           dockerBuildDir: "./src"
           dockerFilePath: "./src/Dockerfile"
           dockerBuildArgs: ""
-          dockerBuildHosts: "43.152.14.34 mirrors.tencent.com"
+          dockerBuildHosts: "9.2.87.192 mirrors.tencent.com"
           prootIgnorePath: |-
             /etc/hosts
             /etc/resolv.conf
