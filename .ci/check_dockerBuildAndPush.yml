@@ -27,7 +27,7 @@ stages:
           targetAuthType: "MY_INPUT"
           targetRegUsername: "${{ settings.mirrors_token.username }}"
           targetRegPassword: "${{ settings.mirrors_token.password }}"
-          targetImage: "mirrors.tencent.com/randy-test/test-container-registry"
+          targetImage: "mirrors.tencent.com/randy-test/test1"
           targetImageName: ""
           targetImageTag: "newfortest"
           dockerBuildDir: "./src"
