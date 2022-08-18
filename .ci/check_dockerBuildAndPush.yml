@@ -17,7 +17,6 @@ stages:
           mkdir -p test
           ls ./src/
           cat ./src/Dockerfile
-          sleep 1000
       - name: "Docker构建镜像和镜像复制转存"
         uses: "DockerBuildPushGo@1.*"
         with:
