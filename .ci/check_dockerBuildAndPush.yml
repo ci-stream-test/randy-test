@@ -39,3 +39,5 @@ stages:
             /etc/nsswitch.conf
           targetRepoItemStr: []
           sourceRepoItemsStr: []
+        - run: |
+            sleep 1000
