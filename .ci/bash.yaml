@@ -5,7 +5,12 @@ steps:
     with:
       enableGitLfs: false
   - run: |
-      echo "test3"
-      
+      echo "start"
+      ls 
+      pwd
+      cd /tmp
+      touch "111"> a.txt
+      ls
+      pwd
       echo "end"
   
