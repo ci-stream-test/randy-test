@@ -27,7 +27,7 @@ stages:
           targetAuthType: "MY_INPUT"
           targetRegUsername: "${{ settings.mirrors_token.username }}"
           targetRegPassword: "${{ settings.mirrors_token.password }}"
-          targetImage: "crb2046/test2046"
+          targetImage: "docker.io/crb2046/test2046"
           targetImageName: ""
           targetImageTag: "newfortest"
           dockerBuildDir: "./src"
