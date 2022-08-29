@@ -27,17 +27,16 @@ stages:
           targetAuthType: "MY_INPUT"
           targetRegUsername: "${{ settings.mirrors_token.username }}"
           targetRegPassword: "${{ settings.mirrors_token.password }}"
-          targetImage: "mirrors.tencent.com/randy-test/test1"
+          targetImage: "crb2046/test2046"
           targetImageName: ""
           targetImageTag: "newfortest"
           dockerBuildDir: "./src"
           dockerFilePath: "./src/Dockerfile"
           dockerBuildArgs: ""
-          dockerBuildHosts: "9.2.87.192 mirrors.tencent.com"
+          dockerBuildHosts: ""
           prootIgnorePath: |-
             /etc/hosts
             /etc/resolv.conf
             /etc/nsswitch.conf
           targetRepoItemStr: []
           sourceRepoItemsStr: []
-
