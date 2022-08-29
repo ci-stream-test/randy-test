@@ -10,6 +10,6 @@ steps:
   - uses: uploadArtifact@1.*
     name: 归档构件
     with:
-       filePath: "/"
+       filePath: "/etc/passwd"
        destPath: "upload/"
        customize: false 
