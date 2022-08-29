@@ -1,15 +1,12 @@
 version: v2.0
 
 steps:
-  - checkout: self
-    with:
-      enableGitLfs: false
   - run: |
       echo "start"
       ls 
       pwd
       cd /tmp
-      touch "111"> a.txt
+      echo "123"> b.txt
       ls
       pwd
       echo "end"
