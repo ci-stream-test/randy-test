@@ -29,7 +29,7 @@ stages:
           targetRegPassword: "${{ settings.mirrors_token.password }}"
           targetImage: "docker.io/crb2046/test2046"
           targetImageName: ""
-          targetImageTag: "newfortest"
+          targetImageTag: "v2"
           dockerBuildDir: "./src"
           dockerFilePath: "./src/Dockerfile"
           dockerBuildArgs: ""
