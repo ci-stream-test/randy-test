@@ -1,2 +1,2 @@
-from mirrors.tencent.com/todacc/tlinux3_python3.8:0.1.2
+from centos:8
 RUN mkdir -p bb
