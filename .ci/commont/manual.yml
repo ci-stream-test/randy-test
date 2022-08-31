@@ -1,0 +1,73 @@
+version: v2.0
+
+on:
+  manual: enabled  # 是否允许手动触发，缺省时默认为 enabled，可选值： enabled / disabled
+
+variables:
+  a: 123
+  my_val_1:
+    value: 1,2,3                    # 默认值，需要在 values 中
+    readonly: true
+    allow-modify-at-startup: false   # 手动触发/openapi触发时生效，可选值：true / false，默认为 false，当 false 时
+    props:
+      label: 我是预定义下拉可选值的字段 # [可选]
+      type: selector
+      options:
+        - id: 1
+          label: 正式环境
+          description: 说明什么情况下发正式
+        - id: 2
+          label: 灰度环境
+          description: 说明什么情况下发灰度
+        - id: 3
+          label: test环境
+          description: 说明什么情况下发test
+      multiple: true                  # [可选] 是否允许多选，缺省时为 false（type=selector时生效）
+      description: 这是个允许多选的下拉选择字段
+  my_val_2:
+    value: my_const_value
+    allow-modify-at-startup: true  # 手动触发/openapi触发时生效，可选值：true / false，默认为 false
+    props:
+      label: 我是通过url获取下拉可选值的字段
+      type: selector      
+      datasource:
+        url: ""                      # [可选]获取下拉列表中可选值的接口，需要接入蓝鲸网关
+        data-path: ""                # [可选]选项列表数据所在的、API返回体json中的路径，没有此字段则默认为data， 示例：data.detail.list。配合url使用
+        param-id: ""                 # [可选]url返回规范中，用于下拉列表选项id的字段名，配合url使用
+        param-name: ""               # [可选]url返回规范中，用于下拉列表选项label的字段名，配合url使用
+        has-add-item: true           # [可选]是否有新增按钮
+        item-text: ""                # [可选]新增按钮文字描述
+        item-target-url: ""          # [可选]点击新增按钮的跳转地址
+      multiple: true                 # [可选]是否允许多选，缺省时为 false（type=selector时生效）
+      description: 这是个允许多选的下拉选择字段
+      required: true
+  my_val_3:
+    value: true
+    allow-modify-at-startup: true  # 手动触发/openapi触发时生效，可选值：true / false，默认为 false
+    props:
+      label: 我是 BOOL 字段
+      type: boolean
+  my_val_4:
+    value: 1
+    allow-modify-at-startup: true  # 手动触发/openapi触发时生效，可选值：true / false，默认为 false
+    props:
+      label: 我是 checkbox 字段
+      type: checkbox
+      options:
+        - id: 1
+          label: 正式环境
+          description: 说明什么情况下发正式
+  my_val_5:
+    value: 这是个tips,说明下怎么使用
+    allow-modify-at-startup: true  # 手动触发/openapi触发时生效，可选值：true / false，默认为 false
+    props:
+      type: tips
+
+steps:
+- run: |
+    echo variables.a is ${{ variables.a }}
+    echo variables.my_val_1 is ${{ variables.my_val_1 }}
+    echo variables.my_val_2 is ${{ variables.my_val_2 }}
+    echo variables.my_val_3 is ${{ variables.my_val_3 }}
+    echo variables.my_val_4 is ${{ variables.my_val_4 }}
+    echo variables.my_val_5 is ${{ variables.my_val_5 }}
