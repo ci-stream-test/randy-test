@@ -1,0 +1,40 @@
+version: "v2.0"
+name: "缓存插件"
+label: []
+stages:
+- name: "stage-2"
+  label:
+  - "Build"
+  jobs:
+    job_WJh:
+      name: "构建环境-LINUX"
+      steps:
+      - name: "Cache"
+        uses: "cache@2.*"
+        with:
+          cacheKey: "test"
+          cachePaths: "test.txt"
+          restoreKeys: "test"
+          skipSaveWhenCacheHit: false
+      - name: "Bash"
+        run: |-
+          # 通过./xxx.sh的方式执行脚本
+          # 即若脚本中未指定解释器，则使用系统默认的shell
+
+          # 您可以通过setEnv函数设置插件间传递的参数
+          # echo "::set-output name=FILENAME::package.zip"
+          # 然后在后续的插件的表单中使用${{ FILENAME }}引用这个变量
+
+          # 您可以在质量红线中创建自定义指标，然后通过setGateValue函数设置指标值
+          # setGateValue "CodeCoverage" $myValue
+          # 然后在质量红线选择相应指标和阈值。若不满足，流水线在执行时将会被卡住
+
+          # cd ${{ ci.workspace }} 可进入当前工作空间目录
+
+          if [ -f test.txt ];
+          then
+            echo "hit cache"
+          else
+            echo "no hit cache"
+            echo test > test.txt
+          fi
