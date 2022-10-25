@@ -10,7 +10,7 @@ stages:
       name: "构建环境-LINUX"
       steps:
       - name: "Cache"
-        uses: "cache@2.*"
+        uses: "cache@1.*"
         with:
           cacheKey: "test"
           cachePaths: "test.txt"
