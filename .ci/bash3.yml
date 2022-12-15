@@ -1,5 +1,7 @@
 version: v2.0
 
 steps:
+  - checkout: self
   - run:
       echo "113"
+      sleep 1000
