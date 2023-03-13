@@ -1,0 +1,7 @@
+version: 1.0.0
+
+image: mirrors.tencent.com/ci/remote-dev-full-remoting:0.1.9
+
+vscode:
+  extensions:
+    - eamodio.gitlens
